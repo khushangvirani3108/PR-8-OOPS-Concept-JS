@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Employee{
+            constructor(name,salary,date){
+                this.name = name;
+                this.salary = salary;
+                this.hDate = new Date(date);
+            }
+            serviceYears(){
+                let currentDate = new Date();
+                let years = currentDate.getFullYear() - this.hDate.getFullYear();
+                return years;
+            }
+            details()
+            {
+                document.write(`<h1>Name => ${this.name}</h1><br>`);
+                document.write(`<h1>Salary => ${this.salary}</h1><br>`);
+                document.write(`<h1>Hiredate => ${this.hDate.toDateString()}</h1><br>`);
+                document.write(`<h1>Years Of Service => ${this.serviceYears}</h1><br>`);
+            }
+        }
+
+        let employee = new Employee("Khushang Virani",100000,"10-12-2020");
+        employee.details();
+    </script>
+</body>
+</html>

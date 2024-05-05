@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Multiplication {
+            constructor(number) {
+                this.number = number;
+            }
+
+            printTable() {
+                let i = 1;
+                do {
+                    document.write(`<h3>${this.number} x ${i} = ${this.number * i}</h3> <br>`);
+                    i++;
+                } while (i <= 10);
+            }
+        }
+
+        let table = new Multiplication(13);
+        table.printTable();
+    </script>
+</body>
+
+</html>

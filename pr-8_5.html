@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Library {
+    constructor() {
+        this.books = []; 
+    }
+    addBook(title, author) {
+        let book = { title, author };
+        this.books.push(book);
+        document.write(`<h1>Book added: ${title} by ${author}</h1><br>`);
+    }
+
+    removeBook(title) {
+        let initialLength = this.books.length;
+        this.books = this.books.filter(book => book.title !== title);
+
+        if (this.books.length === initialLength) {
+            document.write(`<h1>No book found with title "${title}" to remove.</h1><br>`);
+        } else {
+            document.write(`<h1>Book removed: ${title}</h1><br>`);
+        }
+    }
+
+    listBooks() {
+        if (this.books.length === 0) {
+            document.write("No books in the library.");
+        } else {
+            document.write("Books in the library:");
+            this.books.forEach(book => document.write(`<h1>${book.title} by ${book.author}</h1><br>`));
+        }
+    }
+}
+let myLibrary = new Library();
+
+
+myLibrary.addBook("1984", "George Orwell");
+myLibrary.addBook("To Kill a Mockingbird", "Harper Lee");
+myLibrary.addBook("Rich Dad Poor Dad", "Tom Holland");
+
+
+myLibrary.listBooks();
+
+myLibrary.removeBook("1984");
+
+myLibrary.listBooks();
+
+
+myLibrary.removeBook("The Great Gatsby");
+
+    </script>
+</body>
+</html>

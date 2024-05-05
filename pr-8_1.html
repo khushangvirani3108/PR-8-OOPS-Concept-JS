@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="percentage"></h1>
+    <script>
+        class Student {
+    constructor(physics, chemistry, biology, mathematics, computer) {
+        this.physics = physics;
+        this.chemistry = chemistry;
+        this.biology = biology;
+        this.mathematics = mathematics;
+        this.computer = computer;
+    }
+
+    Percentage() {
+        const totalMarks = this.physics + this.chemistry + this.biology + this.mathematics + this.computer;
+        return (totalMarks / 500) * 100;
+    }
+
+    Grade() {
+        const Percentage = this.Percentage();
+
+        if (Percentage >= 90) {
+            return 'Grade A';
+        } else if (Percentage >= 80) {
+            return 'Grade B';
+        } else if (Percentage >= 70) {
+            return 'Grade C';
+        } else if (Percentage >= 60) {
+            return 'Grade D';
+        } else if (Percentage >= 50) {
+            return 'Grade E';
+        } else {
+            return 'Grade F';
+        }
+    }
+}
+
+const student = new Student(90, 92, 86, 80, 85);
+document.getElementById('percentage').innerHTML = ("Percentage: " + student.Percentage().toFixed(2) + "%");
+document.write("Grade: " + student.Grade());
+
+    </script>
+</body>
+</html>
